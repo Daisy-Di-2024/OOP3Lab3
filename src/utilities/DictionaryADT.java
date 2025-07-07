@@ -22,12 +22,12 @@ public interface DictionaryADT<K, V> {
      *
      * @param key   the unique key to be added
      * @param value the value associated with the key
-     * @throws IllegalArgumentException if the key already exists in the dictionary
-     * @throws NullPointerException     if the key is null
-     *                                  Pre-condition: key is not null and does not
-     *                                  already exist in the dictionary
-     *                                  Post-condition: the (key, value) pair is
-     *                                  added to the dictionary
+     * @throws DuplicateKeyException if the key already exists in the dictionary
+     * @throws NullPointerException  if the key is null
+     *                               Pre-condition: key is not null and does not
+     *                               already exist in the dictionary
+     *                               Post-condition: the (key, value) pair is
+     *                               added to the dictionary
      */
     void insert(K key, V value);
 
@@ -71,4 +71,17 @@ public interface DictionaryADT<K, V> {
      *                                  the key is returned
      */
     V lookup(K key);
+
+    /**
+     * Checks if the dictionary contains the given key.
+     * 
+     * @param key the key to check
+     * @throws NullPointerException if the key is null
+     * @return true if the dictionary contains the key, false otherwise
+     *         Pre-condition: key is not null
+     *         Post-condition: returns true only if the dictionary contains the
+     *         given key; the dictionary remains unchanged
+     */
+    boolean containsKey(K key);
+
 }
