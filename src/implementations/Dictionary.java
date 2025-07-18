@@ -1,8 +1,13 @@
+// Author:
+// An-Ni Huang
+// Chen Li
+// Daisy Di
+// Xiaoshan Wang
+// Date:2025-07-18
 package implementations;
 
-import java.util.ArrayList;
-
 import exceptions.DuplicateKeyException;
+import java.util.ArrayList;
 import utilities.DictionaryADT;
 
 public class Dictionary<K, V> implements DictionaryADT<K, V> {
